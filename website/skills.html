@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SKILLS EXAMS - CPE 212 Automating Server Management</title>
+<title>SKILLS EXAMS - CPE 212</title>
 <style>
-/* same styles as above */
+/* Keep your original styles exactly */
 body { margin:0; font-family: Helvetica, Arial, sans-serif; background:#d9d9d9;}
 header { background:#f39b5c; color:#222; padding:20px 38px 8px 38px; font-weight:bold; font-size:1.55em; position:relative;}
 .back-btn { position:absolute; top:15px; right:38px; background:#fff; color:#f39b5c; border:none; font-size:1.2em; font-weight:bold; padding:6px 22px; border-radius:22px; cursor:pointer; box-shadow:0 2px 6px rgba(0,0,0,0.06); transition:0.2s;}
@@ -27,34 +27,28 @@ header { background:#f39b5c; color:#222; padding:20px 38px 8px 38px; font-weight
 CPE 212 - AUTOMATING SERVER MANAGEMENT
 <button class="back-btn" onclick="location.href='index.html';">Back</button>
 </header>
-
-
 <div class="container">
-    <div class="sidebar" id="sidebarButtons"></div>
-    <div class="main-content">
-        <div class="hoas-title">SKILLS EXAMS</div>
-        <div class="orange-divider"></div>
-        <div class="pdf-preview-box" id="pdfPreview">&lt;PDF FILE PREVIEW&gt;</div>
-    </div>
+  <div class="sidebar" id="sidebarButtons"></div>
+  <div class="main-content">
+    <div class="hoas-title">SKILLS EXAMS</div>
+    <div class="orange-divider"></div>
+    <div class="pdf-preview-box" id="pdfPreview">&lt;PDF FILE PREVIEW&gt;</div>
+  </div>
 </div>
 <div class="footer">© 2025 CPE 212 Final Project</div>
 
-
 <script>
 const skillsData = {
-    "BUENO":["Bueno_PrelimExam.pdf","Bueno_MidtermExam.pdf","Bueno_FinalsExam.pdf"],
-    "REYES":["Reyes_PrelimExam.pdf","Reyes_MidtermExam.pdf","Reyes_FinalsExam.pdf"],
-    "RAMIREZ":["Ramirez_PrelimExam.pdf","Ramirez_MidtermExam.pdf","Ramirez_FinalsExam.pdf"],
-    "MAMARIL":["Mamaril_PrelimExam.pdf","Mamaril_MidtermExam.pdf","Mamaril_FinalsExam.pdf"],
-    "SANTOS":["Santos_PrelimExam.pdf","Santos_MidtermExam.pdf","Santos_FinalsExam.pdf"]
+  "BUENO":["Bueno_PrelimExam.pdf","Bueno_MidtermExam.pdf","Bueno_FinalsExam.pdf"],
+  "REYES":["Reyes_PrelimExam.pdf","Reyes_MidtermExam.pdf","Reyes_FinalsExam.pdf"],
+  "RAMIREZ":["Ramirez_PrelimExam.pdf","Ramirez_MidtermExam.pdf","Ramirez_FinalsExam.pdf"],
+  "MAMARIL":["Mamaril_PrelimExam.pdf","Mamaril_MidtermExam.pdf","Mamaril_FinalsExam.pdf"],
+  "SANTOS":["Santos_PrelimExam.pdf","Santos_MidtermExam.pdf","Santos_FinalsExam.pdf"]
 };
 const student = localStorage.getItem("currentStudent") || "BUENO";
 const pdfs = skillsData[student];
-
-
 const sidebarDiv = document.getElementById('sidebarButtons');
 const pdfPreview = document.getElementById('pdfPreview');
-
 
 function previewPDF(file, btn){
     pdfPreview.innerHTML=`<iframe src="pdf/${file}" width="95%" height="400px"></iframe>`;
@@ -62,14 +56,13 @@ function previewPDF(file, btn){
     btn.classList.add('active-btn');
 }
 
-
+const labels = ["Prelim Skills Exam","Midterm Skills Exam","Finals Skills Exam"];
 pdfs.forEach((file,index)=>{
     const btn = document.createElement('button');
-    btn.textContent=index===0?"Prelim Skills Exam":index===1?"Midterm Skills Exam":"Finals Skills Exam";
+    btn.textContent = labels[index];
     btn.onclick = ()=>previewPDF(file, btn);
     sidebarDiv.appendChild(btn);
 });
-
 
 window.onload = function(){
     const firstBtn = document.querySelector('.sidebar button');
@@ -79,5 +72,3 @@ window.onload = function(){
 </script>
 </body>
 </html>
-
-

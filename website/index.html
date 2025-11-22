@@ -1,111 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CPE 212 Portfolio</title>
-
-
-    <!-- Bootstrap 5 CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-
-    <style>
-        body { background-color: #d9d9d9; font-family: Helvetica, sans-serif; }
-        header { background-color: #f39b5c; padding: 15px 40px; font-weight: bold; font-size: 20px; }
-        .main-title { text-align: center; font-size: 60px; font-weight: 900; margin-top: 40px; }
-        .divider { width: 90%; height: 8px; background-color: #f39b5c; margin: 0 auto 40px auto; }
-        .menu-btn { background-color: #f39b5c; border: 6px solid white; border-radius: 35px; font-size: 28px; font-weight: 700; padding: 25px 0; transition: 0.3s ease; color: black; }
-        .menu-btn:hover { background-color: #ffb983; transform: translateY(-4px); box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-        .right-panel { background: white; border-radius: 35px; padding: 35px; }
-        .right-panel h2 { font-weight: 900; }
-        @media (max-width: 768px) { .main-title { font-size: 40px; } .menu-btn { font-size: 24px; padding: 20px 0; } }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPE 212 Portfolio</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body { background-color: #d9d9d9; font-family: Helvetica, sans-serif; }
+header { background-color: #f39b5c; padding: 15px 40px; font-weight: bold; font-size: 20px; }
+.main-title { text-align: center; font-size: 60px; font-weight: 900; margin-top: 40px; }
+.divider { width: 90%; height: 8px; background-color: #f39b5c; margin: 0 auto 40px auto; }
+.menu-btn { background-color: #f39b5c; border: 6px solid white; border-radius: 35px; font-size: 28px; font-weight: 700; padding: 25px 0; transition: 0.3s ease; color: black; }
+.menu-btn:hover { background-color: #ffb983; transform: translateY(-4px); box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+.right-panel { background: white; border-radius: 35px; padding: 35px; }
+.right-panel h2 { font-weight: 900; }
+@media (max-width: 768px) { .main-title { font-size: 40px; } .menu-btn { font-size: 24px; padding: 20px 0; } }
+</style>
 </head>
 <body>
-
-
 <header>CPE 212 - AUTOMATING SERVER MANAGEMENT</header>
-
-
 <h1 class="main-title">CPE 212 PORTFOLIO</h1>
 <div class="divider"></div>
-
-
 <div class="container py-4">
-    <div class="row justify-content-center g-5">
-
-
-        <!-- LEFT SIDE BUTTONS -->
-        <div class="col-lg-4 d-flex flex-column gap-4">
-            <button id="prelimBtn" class="menu-btn">PRELIM HOAs</button>
-            <button id="midtermBtn" class="menu-btn">MIDTERM HOAs</button>
-            <button id="finalsBtn" class="menu-btn">FINALS HOAs</button>
-            <button id="skillsBtn" class="menu-btn">SKILLS EXAMS</button>
-            <button id="nextStudentBtn" class="btn btn-warning mt-3">Next Student</button>
-        </div>
-
-
-        <!-- RIGHT SIDE PANEL -->
-        <div class="col-lg-7 right-panel shadow">
-            <h2 class="text-center mb-3" id="studentName">BUENO</h2>
-            <p id="studentContent">
-                This course taught more about the Linux environment, especially about server management and automation using Ansible. I learned about Ansible fundamentals, SSH configuration, server nodes, and Docker containerization.
-            </p>
-        </div>
+  <div class="row justify-content-center g-5">
+    <div class="col-lg-4 d-flex flex-column gap-4">
+      <button id="prelimBtn" class="menu-btn">PRELIM HOAs</button>
+      <button id="midtermBtn" class="menu-btn">MIDTERM HOAs</button>
+      <button id="finalsBtn" class="menu-btn">FINALS HOAs</button>
+      <button id="skillsBtn" class="menu-btn">SKILLS EXAMS</button>
+      <button id="nextStudentBtn" class="btn btn-warning mt-3">Next Student</button>
     </div>
+    <div class="col-lg-7 right-panel shadow">
+      <h2 class="text-center mb-3" id="studentName">BUENO</h2>
+      <p id="studentContent">
+        This course taught more about the Linux environment, especially about server management and automation using Ansible. I learned about Ansible fundamentals, SSH configuration, server nodes, and Docker containerization.
+      </p>
+    </div>
+  </div>
 </div>
 <div class="footer">© 2025 CPE 212 Final Project</div>
 
-
 <script>
-    const students = [
-        { name: "BUENO", content: "In my Systems Administration course, I gained experience in managing and troubleshooting computer systems, especially when using virtual machines and configuring servers. In the beginning, it was tough to understand the setup and fix different errors, but continuous practice, guides, and hands-on activities helped me improve. I also realized how important patience and careful problem-solving are when dealing with technical issues. These skills will be useful in my future IT work, particularly in keeping systems running smoothly." },
-        { name: "REYES", content: "Reyes's portfolio summary..." },
-        { name: "RAMIREZ", content: "Ramirez's portfolio summary..." },
-        { name: "MAMARIL", content: "Mamaril's portfolio summary..." },
-        { name: "SANTOS", content: "Santos's portfolio summary..." }
-    ];
+const students = [
+  { name: "BUENO", content: "In my Systems Administration course, I gained experience in managing and troubleshooting computer systems, especially when using virtual machines and configuring servers. In the beginning, it was tough to understand the setup and fix different errors, but continuous practice, guides, and hands-on activities helped me improve. I also realized how important patience and careful problem-solving are when dealing with technical issues. These skills will be useful in my future IT work, particularly in keeping systems running smoothly." },
+  { name: "REYES", content: "Reyes's portfolio summary..." },
+  { name: "RAMIREZ", content: "Ramirez's portfolio summary..." },
+  { name: "MAMARIL", content: "Mamaril's portfolio summary..." },
+  { name: "SANTOS", content: "Santos's portfolio summary..." }
+];
 
+let currentIndex = 0;
 
-    let currentIndex = 0;
+function updateStudent() {
+  const student = students[currentIndex];
+  document.getElementById("studentName").textContent = student.name;
+  document.getElementById("studentContent").textContent = student.content;
+  localStorage.setItem("currentStudent", student.name);
+}
 
+document.getElementById("nextStudentBtn").addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % students.length;
+  updateStudent();
+});
 
-    function updateStudent() {
-        const student = students[currentIndex];
-        document.getElementById("studentName").textContent = student.name;
-        document.getElementById("studentContent").textContent = student.content;
-        localStorage.setItem("currentStudent", student.name);
-    }
+function goToPage(page) {
+  localStorage.setItem("currentStudent", students[currentIndex].name);
+  window.location.href = page;
+}
 
+document.getElementById("prelimBtn").addEventListener("click", () => goToPage("prelim.html"));
+document.getElementById("midtermBtn").addEventListener("click", () => goToPage("midterm.html"));
+document.getElementById("finalsBtn").addEventListener("click", () => goToPage("finals.html"));
+document.getElementById("skillsBtn").addEventListener("click", () => goToPage("skills.html"));
 
-    document.getElementById("nextStudentBtn").addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % students.length;
-        updateStudent();
-    });
-
-
-    function goToPage(page) {
-        localStorage.setItem("currentStudent", students[currentIndex].name);
-        window.location.href = page;
-    }
-
-
-    document.getElementById("prelimBtn").addEventListener("click", () => goToPage("prelim.html"));
-    document.getElementById("midtermBtn").addEventListener("click", () => goToPage("midterm.html"));
-    document.getElementById("finalsBtn").addEventListener("click", () => goToPage("finals.html"));
-    document.getElementById("skillsBtn").addEventListener("click", () => goToPage("skills.html"));
-
-
-    // Load previous student if page refreshed
-    const savedStudent = localStorage.getItem("currentStudent");
-    if (savedStudent) {
-        const idx = students.findIndex(s => s.name === savedStudent);
-        if (idx !== -1) currentIndex = idx;
-    }
-    updateStudent();
+// Load previous student if page refreshed
+const savedStudent = localStorage.getItem("currentStudent");
+if (savedStudent) {
+  const idx = students.findIndex(s => s.name === savedStudent);
+  if (idx !== -1) currentIndex = idx;
+}
+updateStudent();
 </script>
 </body>
 </html>
-
-

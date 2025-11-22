@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FINALS HOAs - CPE 212 Automating Server Management</title>
+<title>FINALS HOAs - CPE 212</title>
 <style>
-/* same styles as above for consistency */
+/* Keep your original styles exactly */
 body { margin:0; font-family: Helvetica, Arial, sans-serif; background:#d9d9d9;}
 header { background:#f39b5c; color:#222; padding:20px 38px 8px 38px; font-weight:bold; font-size:1.55em; position:relative;}
 .back-btn { position:absolute; top:15px; right:38px; background:#fff; color:#f39b5c; border:none; font-size:1.2em; font-weight:bold; padding:6px 22px; border-radius:22px; cursor:pointer; box-shadow:0 2px 6px rgba(0,0,0,0.06); transition:0.2s;}
@@ -27,34 +27,28 @@ header { background:#f39b5c; color:#222; padding:20px 38px 8px 38px; font-weight
 CPE 212 - AUTOMATING SERVER MANAGEMENT
 <button class="back-btn" onclick="location.href='index.html';">Back</button>
 </header>
-
-
 <div class="container">
-    <div class="sidebar" id="sidebarButtons"></div>
-    <div class="main-content">
-        <div class="hoas-title">FINALS HOAs</div>
-        <div class="orange-divider"></div>
-        <div class="pdf-preview-box" id="pdfPreview">&lt;PDF FILE PREVIEW&gt;</div>
-    </div>
+  <div class="sidebar" id="sidebarButtons"></div>
+  <div class="main-content">
+    <div class="hoas-title">FINALS HOAs</div>
+    <div class="orange-divider"></div>
+    <div class="pdf-preview-box" id="pdfPreview">&lt;PDF FILE PREVIEW&gt;</div>
+  </div>
 </div>
 <div class="footer">© 2025 CPE 212 Final Project</div>
 
-
 <script>
 const finalsData = {
-    "BUENO":["Bueno_HOA11.1.pdf","Bueno_HOA12.1.pdf"],
-    "REYES":["Reyes_HOA11.1.pdf","Reyes_HOA12.1.pdf"],
-    "RAMIREZ":["Ramirez_HOA11.1.pdf","Ramirez_HOA12.1.pdf"],
-    "MAMARIL":["Mamaril_HOA11.1.pdf","Mamaril_HOA12.1.pdf"],
-    "SANTOS":["Santos_HOA11.1.pdf","Santos_HOA12.1.pdf"]
+  "BUENO":["Bueno_HOA11.1.pdf","Bueno_HOA12.1.pdf"],
+  "REYES":["Reyes_HOA11.1.pdf","Reyes_HOA12.1.pdf"],
+  "RAMIREZ":["Ramirez_HOA11.1.pdf","Ramirez_HOA12.1.pdf"],
+  "MAMARIL":["Mamaril_HOA11.1.pdf","Mamaril_HOA12.1.pdf"],
+  "SANTOS":["Santos_HOA11.1.pdf","Santos_HOA12.1.pdf"]
 };
 const student = localStorage.getItem("currentStudent") || "BUENO";
 const pdfs = finalsData[student];
-
-
 const sidebarDiv = document.getElementById('sidebarButtons');
 const pdfPreview = document.getElementById('pdfPreview');
-
 
 function previewPDF(file, btn){
     pdfPreview.innerHTML=`<iframe src="pdf/${file}" width="95%" height="400px"></iframe>`;
@@ -62,14 +56,12 @@ function previewPDF(file, btn){
     btn.classList.add('active-btn');
 }
 
-
 pdfs.forEach((file,index)=>{
     const btn = document.createElement('button');
     btn.textContent=`Hands-on-Activity ${index+11}.1`;
     btn.onclick = ()=>previewPDF(file, btn);
     sidebarDiv.appendChild(btn);
 });
-
 
 window.onload = function(){
     const firstBtn = document.querySelector('.sidebar button');
@@ -79,5 +71,3 @@ window.onload = function(){
 </script>
 </body>
 </html>
-
-
