@@ -47,7 +47,7 @@
         name: docker
         state: started
         enabled: yes
-
+#wadw
 - hosts: centos
   become: true
   tasks:
