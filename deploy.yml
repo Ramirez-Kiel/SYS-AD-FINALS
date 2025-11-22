@@ -5,14 +5,14 @@
 
     - name: Create website directory
       file:
-        path: /niga/website/
+        path: /Group_7/website/
         state: directory
         mode: '0755'
 
     - name: Copy website files to server
       copy:
         src: website/
-        dest: /niga/website/
+        dest: /Group_7/website/
         owner: root
         group: root
         mode: '0755'
@@ -21,7 +21,7 @@
       community.docker.docker_image:
         name: portfolio_site
         build:
-          path: /niga/website
+          path: /Group_7/website
         source: build
 
     - name: Stop old container if exists
@@ -54,14 +54,14 @@
 
     - name: Create website directory
       file:
-        path: /niga/website/
+        path: /Group_7/website/
         state: directory
         mode: '0755'
 
     - name: Copy website files to server
       copy:
         src: website/
-        dest: /niga/website/
+        dest: /Group_7/website/
         owner: root
         group: root
         mode: '0755'
@@ -70,7 +70,7 @@
       community.docker.docker_image:
         name: portfolio_site
         build:
-          path: /niga/website
+          path: /Group_7/website
         source: build
 
     - name: Stop old container if exists
