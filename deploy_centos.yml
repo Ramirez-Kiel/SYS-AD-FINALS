@@ -1,0 +1,27 @@
+---
+- hosts: centos
+  become: yes
+  tasks:
+
+    - name: Create website directory on CentOS
+      file:
+        path: /home/centos/website
+        state: directory
+
+    - name: Copy website files to CentOS
+      copy:
+        src: ./website/
+        dest: /home/centos/website/
+        owner: centos
+        group: centos
+        mode: '0755'
+
+    - name: Build the nginx container on CentOS
+      command: docker build -t portfolio_site /home/centos/website/
+
+    - name: Stop old container (if exists)
+      command: docker rm -f portfolio_site
+      ignore_errors: yes
+
+    - name: Run website container
+      command: docker run -d --name portfolio_site -p 80:80 portfolio_site
