@@ -7,14 +7,32 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
 body { background-color: #d9d9d9; font-family: Helvetica, sans-serif; }
-header { background-color: #f39b5c; padding: 15px 40px; font-weight: bold; font-size: 20px; }
+header { background-color: #3498db; padding: 15px 40px; font-weight: bold; font-size: 20px; color: white; }
 .main-title { text-align: center; font-size: 60px; font-weight: 900; margin-top: 40px; }
-.divider { width: 90%; height: 8px; background-color: #f39b5c; margin: 0 auto 40px auto; }
-.menu-btn { background-color: #f39b5c; border: 6px solid white; border-radius: 35px; font-size: 28px; font-weight: 700; padding: 25px 0; transition: 0.3s ease; color: black; }
-.menu-btn:hover { background-color: #ffb983; transform: translateY(-4px); box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+.divider { width: 90%; height: 8px; background-color: #3498db; margin: 0 auto 40px auto; }
+.menu-btn, #nextStudentBtn { 
+    background-color: #3498db; 
+    border: 6px solid white; 
+    border-radius: 35px; 
+    font-size: 28px; 
+    font-weight: 700; 
+    padding: 25px 0; 
+    transition: 0.3s ease; 
+    color: white; 
+    width: 100%;
+}
+.menu-btn:hover, #nextStudentBtn:hover { 
+    background-color: #5dade2; 
+    transform: translateY(-4px); 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+}
 .right-panel { background: white; border-radius: 35px; padding: 35px; }
 .right-panel h2 { font-weight: 900; }
-@media (max-width: 768px) { .main-title { font-size: 40px; } .menu-btn { font-size: 24px; padding: 20px 0; } }
+@media (max-width: 768px) { 
+    .main-title { font-size: 40px; } 
+    .menu-btn, #nextStudentBtn { font-size: 24px; padding: 20px 0; } 
+}
+.footer { text-align: center; margin-top: 50px; font-weight: bold; color: #555; }
 </style>
 </head>
 <body>
@@ -28,7 +46,7 @@ header { background-color: #f39b5c; padding: 15px 40px; font-weight: bold; font-
       <button id="midtermBtn" class="menu-btn">MIDTERM HOAs</button>
       <button id="finalsBtn" class="menu-btn">FINALS HOAs</button>
       <button id="skillsBtn" class="menu-btn">SKILLS EXAMS</button>
-      <button id="nextStudentBtn" class="btn btn-warning mt-3">Next Student</button>
+      <button id="nextStudentBtn">Next Student</button>
     </div>
     <div class="col-lg-7 right-panel shadow">
       <h2 class="text-center mb-3" id="studentName">BUENO</h2>
@@ -73,7 +91,6 @@ document.getElementById("midtermBtn").addEventListener("click", () => goToPage("
 document.getElementById("finalsBtn").addEventListener("click", () => goToPage("finals.html"));
 document.getElementById("skillsBtn").addEventListener("click", () => goToPage("skills.html"));
 
-// Load previous student if page refreshed
 const savedStudent = localStorage.getItem("currentStudent");
 if (savedStudent) {
   const idx = students.findIndex(s => s.name === savedStudent);
@@ -83,3 +100,4 @@ updateStudent();
 </script>
 </body>
 </html>
+
